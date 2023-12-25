@@ -5,7 +5,9 @@ use serde::{Deserialize, Serialize};
 use crate::state::State;
 
 #[cw_serde]
-pub struct InstantiateMsg {}
+pub struct InstantiateMsg {
+    pub peer: String,
+}
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Token {

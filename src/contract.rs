@@ -18,11 +18,11 @@ pub fn instantiate(
     _deps: DepsMut,
     _env: Env,
     _info: MessageInfo,
-    _msg: InstantiateMsg,
+    msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
     let state = State {
         creator: _info.sender.to_string(),
-        peer: String::new(),
+        peer: msg.peer,
         tokens: Vec::new(),
         ended: false,
         creator_signed: false,
